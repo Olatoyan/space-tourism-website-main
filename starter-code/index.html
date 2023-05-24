@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Space tourism website</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/utilities.css" />
+    <link rel="stylesheet" href="css/media.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <img
+          src="assets/shared/logo.svg"
+          alt="header logo"
+          class="header__logo"
+        />
+        <div class="line"></div>
+        <nav class="main__nav">
+          <ul class="nav__links">
+            <li class="active__link">
+              <span>00</span><a href="#" class="nav__link">Home</a>
+            </li>
+            <li>
+              <span>01</span><a href="#" class="nav__link">Destination</a>
+            </li>
+            <li><span>02</span><a href="#" class="nav__link">Crew</a></li>
+            <li><span>03</span><a href="#" class="nav__link">Technology</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main class="main">
+        <section class="home__section grid-2x2">
+          <div class="home__text-box">
+            <div class="home__heading-box">
+              <h2 class="secondary__heading">So, you want to travel to</h2>
+              <h1 class="primary__heading">Space</h1>
+            </div>
+            <p class="heading__text">
+              Let’s face it; if you want to go to space, you might as well
+              genuinely go to outer space and not hover kind of on the edge of
+              it. Well sit back, and relax because we’ll give you a truly out of
+              this world experience!
+            </p>
+          </div>
+          <div class="home__explore-box">
+            <p class="explore__text">Explore</p>
+          </div>
+        </section>
+        <section class="destination__section grid-2x2">
+          <div class="destination__box">
+            <div class="tertiary__box">
+              <span>01</span>
+              <h3 class="tertiary__heading">Pick your destination</h3>
+            </div>
+            <div class="destination__img-box">
+              <img
+                src="assets/destination/image-moon.png"
+                alt="Moon image"
+                class="destination__img"
+              />
+            </div>
+          </div>
+          <div class="destination__text-box">
+            <div class="destinations__box">
+              <ul class="destinations">
+                <li>
+                  <a href="#" class="active__destination destination">Moon</a>
+                </li>
+                <li><a href="#" class="destination">Mars</a></li>
+                <li><a href="#" class="destination">Europa</a></li>
+                <li><a href="#" class="destination">Titan</a></li>
+              </ul>
+            </div>
+            <h2 class="destination__heading">Moon</h2>
+            <p class="destination__text">
+              See our planet as you’ve never seen it before. A perfect relaxing
+              trip away to help regain perspective and come back refreshed.
+              While you’re there, take in some history by visiting the Luna 2
+              and Apollo 11 landing sites.
+            </p>
+            <div class="destination__distance">
+              <div class="distance__box">
+                <p class="distance__text">Avg. distance</p>
+                <p class="distance">384,400 km</p>
+              </div>
+              <div class="travel__box">
+                <p class="travel__text">Est. travel time</p>
+                <p class="travel__duration">3 days</p>
+              </div>
+            </div>
+            <!-- </div> -->
+          </div>
+        </section>
+        <section class="crew__section">
+          <div class="crew__box">
+            <div class="tertiary__box">
+              <span>02</span>
+              <h3 class="tertiary__heading">Meet your crew</h3>
+            </div>
+            <div class="crew__text-box">
+              <h3 class="crew__role">Commander</h3>
+              <h2 class="crew__name">Douglas Hurley</h2>
+              <p class="crew__bio">
+                Douglas Gerald Hurley is an American engineer, former Marine
+                Corps pilot and former NASA astronaut. He launched into space
+                for the third time as commander of Crew Dragon Demo-2.
+              </p>
+            </div>
+            <div class="dots">ss</div>
+          </div>
+          <div class="crew__img-box">
+            <img
+              src="assets/crew/image-douglas-hurley.png"
+              alt=""
+              class="crew__img"
+            />
+          </div>
+        </section>
+        <section class="technology__section">
+          <div class="technology__box">
+            <div class="tertiary__box">
+              <span>03</span>
+              <h3 class="tertiary__heading">Space launch 101</h3>
+            </div>
+            <div class="technology__text-box">
+              <div class="technology__number-box">
+                <p class="technology__number active__number">1</p>
+                <p class="technology__number">2</p>
+                <p class="technology__number">3</p>
+              </div>
+              <div class="technology__description-box">
+                <h3 class="technology__description">The terminology...</h3>
+                <h2 class="technology__heading">Launch vehicle</h2>
+                <p class="technology__text">
+                  A launch vehicle or carrier rocket is a rocket-propelled
+                  vehicle used to carry a payload from Earth's surface to space,
+                  usually to Earth orbit or beyond. Our WEB-X carrier rocket is
+                  the most powerful in operation. Standing 150 metres tall, it's
+                  quite an awe-inspiring sight on the launch pad!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="technology__img-box">
+            <img
+              src="assets/technology/image-launch-vehicle-portrait.jpg"
+              alt="launch vehicle"
+              class="technology__img"
+            />
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

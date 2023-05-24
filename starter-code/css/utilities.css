@@ -1,0 +1,37 @@
+.grid-2x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 15rem 12rem 0;
+}
+
+.active__link {
+  border-bottom: 4px solid #fff;
+}
+
+.active__destination:link,
+active__destination:visited {
+  color: #fff;
+  border-bottom: 2px solid #fff;
+}
+
+.active__number {
+  color: #000;
+  background-color: #fff;
+}
+
+.home__section {
+  /* display: none; */
+  padding-bottom: 19rem;
+}
+
+.destination__section {
+  display: none;
+}
+
+.crew__section {
+  display: none;
+}
+
+.technology__section {
+  display: none;
+}

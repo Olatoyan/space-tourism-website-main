@@ -1,0 +1,53 @@
+@media only screen and (max-width: 75em) {
+  .line {
+    display: none;
+  }
+
+  .grid-2x2 {
+    padding: 15rem 6rem 0;
+  }
+}
+
+@media only screen and (max-width: 68.75em) {
+  .main__nav {
+    padding: 0 4rem;
+  }
+
+  .nav__links {
+    gap: 5rem;
+  }
+
+  .home__section {
+    gap: 20rem;
+  }
+}
+
+@media only screen and (max-width: 56.25em) {
+  .container {
+    background-image: url(../assets/home/background-home-tablet.jpg);
+    background-size: cover;
+  }
+
+  .grid-2x2 {
+    grid-template-columns: 1fr;
+  }
+
+  .nav__links {
+    gap: 2rem;
+  }
+  .nav__link:link,
+  .nav__link:visited {
+    font-size: 1.4rem;
+  }
+
+  .home__section {
+    justify-items: center;
+    text-align: center;
+  }
+
+  .heading__text {
+    width: 60%;
+    align-self: center;
+    text-align: center;
+  }
+}
