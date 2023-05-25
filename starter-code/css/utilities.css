@@ -4,12 +4,16 @@
   padding: 15rem 12rem 0;
 }
 
-.active__link {
+.nav__links .active__link {
+  border-bottom: 4px solid #fff;
+}
+
+.nav__links .active__link:hover {
   border-bottom: 4px solid #fff;
 }
 
 .active__destination:link,
-active__destination:visited {
+.active__destination:visited {
   color: #fff;
   border-bottom: 2px solid #fff;
 }

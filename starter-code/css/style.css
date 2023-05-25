@@ -110,6 +110,17 @@ body {
 .nav__links li:hover {
   border-bottom: 3px solid #979797;
 }
+.btn-mobile-nav {
+  display: flex;
+  align-items: center;
+  display: none;
+}
+.open__icon {
+}
+
+.close__icon {
+  display: none;
+}
 
 /* ****************** 
 HOME SECTION
@@ -206,6 +217,7 @@ DESTINATION SECTION
 
 .destination__section {
   align-items: center;
+  gap: 5rem;
 }
 
 .destination__box {
@@ -213,6 +225,7 @@ DESTINATION SECTION
   flex-direction: column;
   gap: 9rem;
   padding-bottom: 0.9rem;
+  width: 100%;
 }
 
 .destination__img-box {
@@ -252,6 +265,7 @@ DESTINATION SECTION
   align-items: center;
   gap: 3.5rem;
 }
+
 .destination:link,
 .destination:visited {
   text-decoration: none;
@@ -361,6 +375,7 @@ CREW SECTION
 }
 
 .crew__img {
+  width: 100%;
 }
 
 /* ****************** 

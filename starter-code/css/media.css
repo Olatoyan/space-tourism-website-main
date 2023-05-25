@@ -20,16 +20,26 @@
   .home__section {
     gap: 20rem;
   }
+
+  .crew__section {
+    gap: 6rem;
+  }
 }
 
 @media only screen and (max-width: 56.25em) {
   .container {
     background-image: url(../assets/home/background-home-tablet.jpg);
+    background-image: url(../assets/destination/background-destination-tablet.jpg);
     background-size: cover;
   }
 
-  .grid-2x2 {
+  .grid-2x2,
+  .crew__section {
     grid-template-columns: 1fr;
+  }
+
+  .header {
+    padding: 2rem;
   }
 
   .nav__links {
@@ -40,14 +50,31 @@
     font-size: 1.4rem;
   }
 
-  .home__section {
+  .home__section,
+  .destination__section {
     justify-items: center;
     text-align: center;
   }
 
-  .heading__text {
+  .tertiary__box {
+    justify-content: flex-start;
+  }
+
+  .destinations,
+  .destination__distance {
+    justify-content: center;
+  }
+
+  .heading__text,
+  .destination__text {
     width: 60%;
     align-self: center;
     text-align: center;
   }
+  .destination__text {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 43.75em) {
 }
