@@ -30,13 +30,8 @@ body {
 
 .container {
   background-image: url(../assets/home/background-home-desktop.jpg);
-  /* background-image: url(../assets/destination/background-destination-desktop.jpg);
-  background-image: url(../assets/crew/background-crew-desktop.jpg);
-  background-image: url(../assets/technology/background-technology-desktop.jpg); */
   background-size: cover;
-  /* height: 100vh; */
   max-width: 144rem;
-  /* padding: 4rem 0 8rem 0; */
 }
 .header {
   display: flex;
@@ -69,19 +64,6 @@ body {
   z-index: 1;
 }
 
-/* .main__nav::before {
-  content: "";
-  display: block;
-  position: absolute;
-  background-color: #fff;
-  top: 0;
-  left: -20%;
-  height: 1px;
-  width: 50%;
-  mix-blend-mode: normal;
-  opacity: 0.25;
-} */
-
 .nav__links {
   display: flex;
   gap: 9rem;
@@ -95,7 +77,6 @@ body {
   gap: 1.4rem;
   color: #fff;
   padding: 2rem 0;
-  /* transition: all 0.3s; */
   cursor: pointer;
 }
 .nav__links span {
@@ -108,7 +89,6 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   color: #fff;
-  /* font-weight: 400; */
 }
 
 .nav__links li:hover {
@@ -119,8 +99,6 @@ body {
   align-items: center;
   display: none;
 }
-.open__icon {
-}
 
 .close__icon {
   display: none;
@@ -129,10 +107,6 @@ body {
 /* ****************** 
 HOME SECTION
 ****************** */
-
-.main {
-  /* padding: 15rem 12rem 0; */
-}
 
 .home__section {
   gap: 35rem;
@@ -153,7 +127,6 @@ HOME SECTION
 .secondary__heading {
   font-size: 2.8rem;
   text-transform: uppercase;
-  /* line-height: 3.4rem; */
   font-weight: 400;
   color: #d0d6f9;
 }
@@ -162,7 +135,6 @@ HOME SECTION
   font-size: 15rem;
   text-transform: uppercase;
   font-family: "Bellefair", serif;
-  /* line-height: 14.2rem; */
   font-weight: 400;
 }
 .heading__text {
@@ -232,10 +204,6 @@ DESTINATION SECTION
   width: 100%;
 }
 
-.destination__img-box {
-  /* width: 20%; */
-}
-
 .tertiary__box {
   display: flex;
   align-items: center;
@@ -253,9 +221,6 @@ DESTINATION SECTION
   font-weight: 400;
 }
 
-.destination__img {
-}
-
 .destination__text-box {
   display: flex;
   flex-direction: column;
@@ -270,19 +235,6 @@ DESTINATION SECTION
   gap: 3.5rem;
 }
 
-/* .destination:link,
-.destination:visited {
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #d0d6f9;
-  font-size: 1.6rem;
-  padding-bottom: 1.2rem;
-} */
-
-/* .destination:hover,
-.destination:active {
-  border-bottom: 2px solid #979797;
-} */
 .destination {
   text-decoration: none;
   text-transform: uppercase;
@@ -404,15 +356,11 @@ TECHNOLOGY SECTION
 
 .technology__section {
   display: grid;
-
-  /* align-items: center; */
   padding: 15rem 0 4.5rem 10rem;
   gap: 4rem;
 }
 .box {
   display: grid;
-  /* padding: 0 0 0 ; */
-
   grid-template-columns: repeat(2, 1fr);
 }
 
@@ -426,7 +374,6 @@ TECHNOLOGY SECTION
 }
 .technology__text-box {
   display: flex;
-  /* align-items: center; */
   gap: 8rem;
 }
 .technology__number-box {
