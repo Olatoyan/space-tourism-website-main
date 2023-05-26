@@ -1,6 +1,8 @@
 "use strict";
 
 const container = document.querySelector(".container");
+const header = document.querySelector(".header");
+const btnNav = document.querySelector(".btn-mobile-nav");
 const navLinks = document.querySelector(".nav__links");
 const navLink = document.querySelectorAll(".nav__link");
 const destinationID = document.getElementById("destination");
@@ -13,9 +15,61 @@ const technologySection = document.querySelector(".technology__section");
 const destinationLinks = document.querySelector(".destinations");
 const dotContainer = document.querySelector(".dots");
 
+// navLinks.addEventListener("click", function (e) {
+//   e.preventDefault();
+//   const parentEL = e.target.closest("li");
+
+//   const activeLinks = document.querySelectorAll(".active__link");
+//   activeLinks.forEach(function (link) {
+//     link.classList.remove("active__link");
+//   });
+
+//   parentEL.classList.add("active__link");
+
+//   if (parentEL && parentEL.id === "home") {
+//     homeSection.style.display = "grid";
+//     destinationSection.style.display = "none";
+//     crewSection.style.display = "none";
+//     technologySection.style.display = "none";
+//     container.style.backgroundImage =
+//       "url(assets/home/background-home-desktop.jpg)";
+//   } else if (parentEL && parentEL.id === "destination") {
+//     homeSection.style.display = "none";
+//     destinationSection.style.display = "grid";
+//     crewSection.style.display = "none";
+//     technologySection.style.display = "none";
+//     container.style.backgroundImage =
+//       "url(assets/destination/background-destination-desktop.jpg)";
+//   } else if (parentEL && parentEL.id === "crew") {
+//     homeSection.style.display = "none";
+//     destinationSection.style.display = "none";
+//     crewSection.style.display = "grid";
+//     technologySection.style.display = "none";
+//     container.style.backgroundImage =
+//       "url(assets/crew/background-crew-desktop.jpg)";
+//   } else if (parentEL && parentEL.id === "technology") {
+//     homeSection.style.display = "none";
+//     destinationSection.style.display = "none";
+//     crewSection.style.display = "none";
+//     technologySection.style.display = "grid";
+//     container.style.backgroundImage =
+//       "url(assets/technology/background-technology-desktop.jpg)";
+//   }
+// });
+
+btnNav.addEventListener("click", function (e) {
+  e.stopPropagation(); // Prevent the click event from propagating to the window
+  header.classList.toggle("nav-open");
+});
+
+window.addEventListener("click", function () {
+  header.classList.remove("nav-open");
+});
+
 navLinks.addEventListener("click", function (e) {
   e.preventDefault();
   const parentEL = e.target.closest("li");
+  parentEL.closest("header").classList.remove("nav-open");
 
   const activeLinks = document.querySelectorAll(".active__link");
   activeLinks.forEach(function (link) {
@@ -24,35 +78,82 @@ navLinks.addEventListener("click", function (e) {
 
   parentEL.classList.add("active__link");
 
+  // Define the background images for different screen widths
+  const backgroundImages = {
+    home: {
+      mobile: "assets/home/background-home-mobile.jpg",
+      tablet: "assets/home/background-home-tablet.jpg",
+      desktop: "assets/home/background-home-desktop.jpg",
+    },
+    destination: {
+      mobile: "assets/destination/background-destination-mobile.jpg",
+      tablet: "assets/destination/background-destination-tablet.jpg",
+      desktop: "assets/destination/background-destination-desktop.jpg",
+    },
+    crew: {
+      mobile: "assets/crew/background-crew-mobile.jpg",
+      tablet: "assets/crew/background-crew-tablet.jpg",
+      desktop: "assets/crew/background-crew-desktop.jpg",
+    },
+    technology: {
+      mobile: "assets/technology/background-technology-mobile.jpg",
+      tablet: "assets/technology/background-technology-tablet.jpg",
+      desktop: "assets/technology/background-technology-desktop.jpg",
+    },
+  };
+
+  const screenWidth = window.innerWidth;
+  console.log(screenWidth);
+  let backgroundImageURL;
+
   if (parentEL && parentEL.id === "home") {
     homeSection.style.display = "grid";
     destinationSection.style.display = "none";
     crewSection.style.display = "none";
     technologySection.style.display = "none";
-    container.style.backgroundImage =
-      "url(assets/home/background-home-desktop.jpg)";
+
+    if (screenWidth <= 900) {
+      backgroundImageURL = backgroundImages.home.tablet;
+    } else if (screenWidth <= 600) {
+    } else {
+      backgroundImageURL = backgroundImages.home.desktop;
+    }
   } else if (parentEL && parentEL.id === "destination") {
     homeSection.style.display = "none";
     destinationSection.style.display = "grid";
     crewSection.style.display = "none";
     technologySection.style.display = "none";
-    container.style.backgroundImage =
-      "url(assets/destination/background-destination-desktop.jpg)";
+
+    if (screenWidth <= 900) {
+      backgroundImageURL = backgroundImages.destination.tablet;
+    } else {
+      backgroundImageURL = backgroundImages.destination.desktop;
+    }
   } else if (parentEL && parentEL.id === "crew") {
     homeSection.style.display = "none";
     destinationSection.style.display = "none";
     crewSection.style.display = "grid";
     technologySection.style.display = "none";
-    container.style.backgroundImage =
-      "url(assets/crew/background-crew-desktop.jpg)";
+
+    if (screenWidth <= 900) {
+      backgroundImageURL = backgroundImages.crew.tablet;
+    } else {
+      backgroundImageURL = backgroundImages.crew.desktop;
+    }
   } else if (parentEL && parentEL.id === "technology") {
     homeSection.style.display = "none";
     destinationSection.style.display = "none";
     crewSection.style.display = "none";
     technologySection.style.display = "grid";
-    container.style.backgroundImage =
-      "url(assets/technology/background-technology-desktop.jpg)";
+
+    if (screenWidth <= 900) {
+      backgroundImageURL = backgroundImages.technology.tablet;
+    } else {
+      backgroundImageURL = backgroundImages.technology.desktop;
+    }
   }
+
+  container.style.backgroundImage = `url(${backgroundImageURL})`;
 });
 
 exploreBtn.addEventListener("click", function (e) {
@@ -245,7 +346,7 @@ let r;
 //   // });
 // };
 
-const renderDestination = function (data) {
+const renderDestination = function (data, activeDes) {
   const html = `
           <div class="destination__box">
               <div class="tertiary__box">
@@ -263,11 +364,19 @@ const renderDestination = function (data) {
           <div class="destination__text-box">
             <div class="destinations__box">
               <ul class="destinations">
-                <li class="destination moon">Moon
+                <li class="destination moon ${
+                  activeDes === 1 ? "active__destination" : ""
+                }">Moon
                 </li>
-                <li class="destination mars">Mars</li>
-                <li class="destination europa">Europa</li>
-                <li class="destination titan">Titan</li>
+                <li class="destination mars  ${
+                  activeDes === 2 ? "active__destination" : ""
+                }">Mars</li>
+                <li class="destination europa  ${
+                  activeDes === 3 ? "active__destination" : ""
+                }">Europa</li>
+                <li class="destination titan  ${
+                  activeDes === 4 ? "active__destination" : ""
+                }">Titan</li>
               </ul>
             </div>
             <h2 class="destination__heading">${data.name}</h2>
@@ -323,6 +432,57 @@ const renderCrew = function (data, activeDotIndex) {
 
   crewSection.insertAdjacentHTML("beforeend", html);
 };
+const renderTech = function (data, activeNum) {
+  const html = `
+
+  
+  <div class="tertiary__box">
+  <span>03</span>
+  <h3 class="tertiary__heading">Space launch 101</h3>
+  </div>
+  
+  <div class="box">
+        <div class="technology__box">
+          <div class="technology__text-box">
+            <div class="technology__number-box">
+              <p class="technology__number tech-1 ${
+                activeNum === 1 ? "active__number" : ""
+              }">1</p>
+              <p class="technology__number tech-2 ${
+                activeNum === 2 ? "active__number" : ""
+              }">2</p>
+              <p class="technology__number tech-3 ${
+                activeNum === 3 ? "active__number" : ""
+              }">3</p>
+            </div>
+            <div class="technology__description-box">
+              <h3 class="technology__description">The terminology...</h3>
+              <h2 class="technology__heading">${data.name}</h2>
+              <p class="technology__text">${data.description}</p>
+            </div>
+          </div>
+        </div>
+        <div class="technology__img-box">
+          <picture>
+            <source
+              srcset="${data.images.landscape}"
+              media="(max-width: 900px)"
+              alt="launch vehicle landscape"
+              class="technology__img"
+            />
+            <img
+            src="${data.images.portrait}"
+            alt="launch vehicle"
+            class="technology__img"
+          />
+      </picture>
+         
+      </div>
+      </div>
+  `;
+
+  technologySection.insertAdjacentHTML("beforeend", html);
+};
 
 const destination = async function () {
   const res = await fetch("data.json");
@@ -330,9 +490,12 @@ const destination = async function () {
   console.log(data);
   const destinationSection = document.querySelector(".destination__section");
   const crewSection = document.querySelector(".crew__section");
-  renderDestination(data.destinations[0]);
+  const technologySection = document.querySelector(".technology__section");
+
+  renderDestination(data.destinations[0], 1);
   renderCrew(data.crew[0], 1);
-  console.log(data.crew[0]);
+  renderTech(data.technology[0], 1);
+  console.log(data.technology[0]);
 
   destinationSection.addEventListener("click", function (e) {
     if (e.target.classList.contains("destination")) {
@@ -348,14 +511,14 @@ const destination = async function () {
 
       if (e.target.classList.contains("moon")) {
         console.log("Moon clicked");
-        renderDestination(data.destinations[0]);
+        renderDestination(data.destinations[0], 1);
       } else if (e.target.classList.contains("mars")) {
         console.log("Mars clicked");
-        renderDestination(data.destinations[1]);
+        renderDestination(data.destinations[1], 2);
       } else if (e.target.classList.contains("europa")) {
-        renderDestination(data.destinations[2]);
+        renderDestination(data.destinations[2], 3);
       } else if (e.target.classList.contains("titan")) {
-        renderDestination(data.destinations[3]);
+        renderDestination(data.destinations[3], 4);
       } else {
         return;
       }
@@ -447,6 +610,35 @@ const destination = async function () {
       dotClass.add("active__dot");
     } else {
       return;
+    }
+  });
+
+  technologySection.addEventListener("click", function (e) {
+    if (
+      !e.target.classList.contains("technology__number") &&
+      !e.target.closest(".technology__number")
+    ) {
+      return;
+    }
+    const numTech = document.querySelectorAll(".technology__number");
+    numTech.forEach((num) => num.classList.remove("active__number"));
+    const techClass = e.target.classList;
+    if (
+      techClass.contains("tech-1") ||
+      techClass.contains("tech-2") ||
+      techClass.contains("tech-3")
+    ) {
+      techClass.add("active__number");
+    }
+    if (techClass.contains("tech-1")) {
+      technologySection.textContent = "";
+      renderTech(data.technology[0], 1);
+    } else if (techClass.contains("tech-2")) {
+      technologySection.textContent = "";
+      renderTech(data.technology[1], 2);
+    } else if (techClass.contains("tech-3")) {
+      technologySection.textContent = "";
+      renderTech(data.technology[2], 3);
     }
   });
 };
