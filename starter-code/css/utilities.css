@@ -12,8 +12,12 @@
   border-bottom: 4px solid #fff;
 }
 
-.active__destination:link,
+/* .active__destination:link,
 .active__destination:visited {
+  color: #fff;
+  border-bottom: 2px solid #fff;
+} */
+.active__destination {
   color: #fff;
   border-bottom: 2px solid #fff;
 }
@@ -34,8 +38,31 @@
 
 .crew__section {
   display: none;
+  /* height: 100vh; */
+  height: 72rem;
 }
 
 .technology__section {
   display: none;
+}
+
+.dots {
+  display: flex;
+  align-items: baseline;
+  gap: 1.6rem;
+}
+
+.dot {
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  mix-blend-mode: normal;
+  opacity: 0.17;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.active__dot {
+  opacity: 1;
 }

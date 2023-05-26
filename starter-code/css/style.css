@@ -266,17 +266,29 @@ DESTINATION SECTION
   gap: 3.5rem;
 }
 
-.destination:link,
+/* .destination:link,
 .destination:visited {
   text-decoration: none;
   text-transform: uppercase;
   color: #d0d6f9;
   font-size: 1.6rem;
   padding-bottom: 1.2rem;
+} */
+
+/* .destination:hover,
+.destination:active {
+  border-bottom: 2px solid #979797;
+} */
+.destination {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #d0d6f9;
+  font-size: 1.6rem;
+  padding-bottom: 1.2rem;
+  cursor: pointer;
 }
 
-.destination:hover,
-.destination:active {
+.destination:hover {
   border-bottom: 2px solid #979797;
 }
 
@@ -330,14 +342,15 @@ CREW SECTION
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   /* align-items: center; */
-  padding: 2rem 12rem 0;
-  gap: 15rem;
+  padding: 0 12rem;
+  gap: 14rem;
 }
 .crew__box {
-  padding-top: 13rem;
+  /* padding-top: 9rem; */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
+  height: 65rem;
 }
 .tertiary__box {
 }
@@ -346,7 +359,7 @@ CREW SECTION
 .crew__text-box {
 }
 .crew__role {
-  font-size: 3.2rem;
+  font-size: 3rem;
   font-weight: 400;
   text-transform: uppercase;
   font-family: "Bellefair", serif;
@@ -355,7 +368,7 @@ CREW SECTION
   line-height: 3.7rem;
 }
 .crew__name {
-  font-size: 5.6rem;
+  font-size: 4.7rem;
   font-weight: 400;
   text-transform: uppercase;
   font-family: "Bellefair", serif;
@@ -376,6 +389,8 @@ CREW SECTION
 
 .crew__img {
   width: 100%;
+  height: 72rem;
+  object-fit: cover;
 }
 
 /* ****************** 
