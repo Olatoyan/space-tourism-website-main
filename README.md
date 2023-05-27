@@ -44,7 +44,7 @@ I learnt how to use API's for the first time
 ## Author
 
 - Website - [Toyan Space Tourism](https://toyan-space-tourism.netlify.app/)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Frontend Mentor - [@Olatoyan](https://www.frontendmentor.io/profile/yourusername)
+- Twitter - [@Toyan](https://www.twitter.com/yourusername)
 
 **Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
