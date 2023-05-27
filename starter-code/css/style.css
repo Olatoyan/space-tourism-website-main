@@ -47,7 +47,8 @@ body {
 }
 .main__nav {
   background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(40.7742px);
+  -webkit-backdrop-filter: blur(4.07742rem);
+  backdrop-filter: blur(4.07742rem);
   padding: 0 10rem;
   /* position: relative; */
 }

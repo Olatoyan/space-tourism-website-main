@@ -271,7 +271,12 @@ const destination = async function () {
   renderCrew(data.crew[0], 1);
   renderTech(data.technology[0], 1);
 
-  destinationSection.addEventListener("click", function (e) {
+  const handleDestination = function (e) {
+    const target = e.target.closest(".destination");
+    if (!target) return;
+
+    e.preventDefault();
+
     if (e.target.classList.contains("destination")) {
       e.preventDefault();
 
@@ -294,55 +299,38 @@ const destination = async function () {
         return;
       }
     }
-  });
+  };
 
-  crewSection.addEventListener("click", function (e) {
-    if (!e.target.classList.contains("dot") && !e.target.closest(".dot")) {
-      return;
-    }
+  const handleCrew = function (e) {
+    const target = e.target.closest(".dot");
+    if (!target) return;
     e.preventDefault();
-    const dots = crewSection.querySelectorAll(".dot");
-    dots.forEach((dot) => dot.classList.remove("active__dot"));
 
     const dotClass = e.target.classList;
-    if (
-      dotClass.contains("dot-1") ||
-      dotClass.contains("dot-2") ||
-      dotClass.contains("dot-3") ||
-      dotClass.contains("dot-4")
-    ) {
-      const dots = crewSection.querySelectorAll(".dot");
 
+    if (dotClass.contains("dot-1")) {
       crewSection.textContent = "";
-      const dotNumber = dotClass[1].charAt(4) - 1;
-
-      dots.forEach((dot) => dot.classList.remove("active__dot"));
-
-      renderCrew(data.crew[dotNumber], dotNumber + 1);
-
-      dotClass.add("active__dot");
-    } else {
-      return;
+      renderCrew(data.crew[0], 1);
+    } else if (dotClass.contains("dot-2")) {
+      crewSection.textContent = "";
+      renderCrew(data.crew[1], 2);
+    } else if (dotClass.contains("dot-3")) {
+      crewSection.textContent = "";
+      renderCrew(data.crew[2], 3);
+    } else if (dotClass.contains("dot-4")) {
+      crewSection.textContent = "";
+      renderCrew(data.crew[3], 4);
     }
-  });
+  };
 
-  technologySection.addEventListener("click", function (e) {
-    if (
-      !e.target.classList.contains("technology__number") &&
-      !e.target.closest(".technology__number")
-    ) {
-      return;
-    }
-    const numTech = document.querySelectorAll(".technology__number");
-    numTech.forEach((num) => num.classList.remove("active__number"));
+  const handleTech = function (e) {
+    const target = e.target.closest(".technology__number");
+    if (!target) return;
+
+    e.preventDefault();
+
     const techClass = e.target.classList;
-    if (
-      techClass.contains("tech-1") ||
-      techClass.contains("tech-2") ||
-      techClass.contains("tech-3")
-    ) {
-      techClass.add("active__number");
-    }
+
     if (techClass.contains("tech-1")) {
       technologySection.textContent = "";
       renderTech(data.technology[0], 1);
@@ -353,6 +341,10 @@ const destination = async function () {
       technologySection.textContent = "";
       renderTech(data.technology[2], 3);
     }
-  });
+  };
+
+  destinationSection.addEventListener("click", handleDestination);
+  crewSection.addEventListener("click", handleCrew);
+  technologySection.addEventListener("click", handleTech);
 };
 destination();
