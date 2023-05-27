@@ -12,11 +12,6 @@
   border-bottom: 4px solid #fff;
 }
 
-/* .active__destination:link,
-.active__destination:visited {
-  color: #fff;
-  border-bottom: 2px solid #fff;
-} */
 .active__destination {
   color: #fff;
   border-bottom: 2px solid #fff;
@@ -38,7 +33,6 @@
 
 .crew__section {
   display: none;
-  /* height: 100vh; */
   height: 72rem;
 }
 
